@@ -1,27 +1,22 @@
-<div style="width: 100%; height: 100%; background-color: lightgrey;">
-  <div style="display: grid; grid-template-rows: auto auto auto; row-gap: 100px;">
-    <div style="border: 1px solid red; width: 100px; height: 100px; justify-self: center;">
-      App
-    </div>
-    <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 100px;">
-      <div style="border: 1px solid green; width: 100px; height: 100px">
-        Parent One
+<div style="background-color: lightgrey; text-align: center;">
+    <div style="display:grid; grid-template-rows: auto auto; border: 1px solid red; row-gap: 100px;">
+      <b>App</b> {{ checkView() }}
+
+      <button (click)="onClick()">Button</button>
+
+      <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 100px;">
+        <div style="border: 1px solid green">
+          <app-parent-one></app-parent-one>
+        </div>
+        <div style="border: 1px solid green">
+          <app-parent-two></app-parent-two>
+        </div>
+        <div style="border: 1px solid green">
+          <app-parent-three></app-parent-three>
+        </div>
       </div>
-      <div style="border: 1px solid green; width: 100px; height: 100px">
-        Parent Two
-      </div>
-      <div style="border: 1px solid green; width: 100px; height: 100px">
-        Parent Three
-      </div>
+
     </div>
-    <div style="display: grid; grid-template-columns: auto auto auto auto auto; justify-self: center; column-gap: 100px;">
-      <div style="border: 1px solid blue; width: 100px; height: 100px"></div>
-      <div style="border: 1px solid blue; width: 100px; height: 100px"></div>
-      <div style="border: 1px solid rgb(255, 0, 149); width: 100px; height: 100px"></div>
-      <div style="border: 1px solid rgb(251, 255, 0); width: 100px; height: 100px"></div>
-      <div style="border: 1px solid rgb(251, 255, 0); width: 100px; height: 100px"></div>
-    </div>
-  </div>
 </div>
 <!--
 <div style="border: 1px solid red">
@@ -58,3 +53,5 @@
   <button (click)="onUpdate()">Update App</button>
 </div>
 -->
+
+sa pun si observable cu | async sa arat ca tot intra de jdemii de ori fara onPush

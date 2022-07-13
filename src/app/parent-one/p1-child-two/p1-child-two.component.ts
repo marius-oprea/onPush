@@ -1,16 +1,15 @@
 import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-p3-child-two',
-  templateUrl: './p3-child-two.component.html',
+  selector: 'app-p1-child-two',
+  templateUrl: './p1-child-two.component.html',
   //changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class P3ChildTwoComponent implements AfterViewChecked {
+export class P1ChildTwoComponent implements AfterViewChecked {
   counter: number;
   
   constructor(private cdr: ChangeDetectorRef) {
     this.counter = 0;
-    // this.cdr.detach();
   }
 
   onClick() {
@@ -19,14 +18,14 @@ export class P3ChildTwoComponent implements AfterViewChecked {
   
 
   checkView() {
-    console.log('P3 Child 2');
-  }
+    console.log('P1 Child 2')
+  }  
 
   ngAfterViewChecked() {
     /*
     this.counter++;
     this.cdr.detectChanges(); 
-    console.log('p3 child two - checkView')    
+    console.log('p1 child two - checkView')    
     */
-  }   
+  } 
 }

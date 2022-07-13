@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -19,4 +19,18 @@ import { ParentThreeModule } from './parent-three/parent-three.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(applicationRef: ApplicationRef) {
+    const originalTick = applicationRef.tick;
+    applicationRef.tick = function() {
+      const windowPerfomance = window.performance;
+      const  before = windowPerfomance.now();
+      const retValue = originalTick.apply(this);
+      const after = windowPerfomance.now();
+      const runTime = after - before;
+      window.console.log('CHANGE DETECTION TIME' , runTime);
+      return retValue;
+    };
+  }
+
+ }

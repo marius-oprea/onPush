@@ -1,1 +1,15 @@
+<div style="border:1px solid green; display:grid; grid-template-rows: auto auto; row-gap: 100px;">
+  <div>
+    <b>Parent Two</b> {{ checkView() }}
+
+    <button (click)="onClick()">Button</button>
+  </div>
+  <div style="display: grid; grid-template-columns: auto; column-gap: 100px;">
+    <app-p2-child-one></app-p2-child-one>
+  </div>
+</div>
+
+
+<!--
 {{getObj() | json}}
+-->

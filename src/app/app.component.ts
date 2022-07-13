@@ -1,11 +1,14 @@
-import { ApplicationRef, Component } from '@angular/core';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements AfterViewChecked {
+  counter: number;
   id = 5;
   user = {
     firstName: 'John',
@@ -19,7 +22,9 @@ export class AppComponent {
   };
   value = 'third component';
 
-  constructor(private appRef: ApplicationRef) {
+  constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef) {
+    //this.cdr.detach();
+    this.counter = 0;
   }
 
   onClickId() {
@@ -35,7 +40,7 @@ export class AppComponent {
     };
 */
   }
-
+/*
   onClickDepartment() {
     this.department = 'HR';
   }
@@ -52,4 +57,20 @@ export class AppComponent {
     this.appRef.tick();
     // setTimeout(() => {});
   }
+*/
+
+onClick() {
+  // this.counter++;
+}
+
+ checkView() {
+  console.log('App');
+ }
+
+  ngAfterViewChecked() {
+    // this.counter++;
+    // this.cdr.detectChanges(); 
+    // this.cdr.markForCheck();
+    // console.log('app - checkView', this.counter)
+  }  
 }

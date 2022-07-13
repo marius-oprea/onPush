@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { ApplicationRef, enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -12,5 +12,21 @@ if (environment.production) {
 // https://www.youtube.com/watch?v=aDnKmuQWTyE&ab_channel=FrontPro
 // https://www.youtube.com/watch?v=-tB-QDrPmuI&ab_channel=MonsterlessonsAcademy
 
-platformBrowserDynamic().bootstrapModule(AppModule, {ngZone: 'noop'})
+// platformBrowserDynamic().bootstrapModule(AppModule, {ngZone: 'noop'})
+//platformBrowserDynamic().bootstrapModule(AppModule)
+  //.catch(err => console.error(err));
+
+
+  import {enableDebugTools} from '@angular/platform-browser';
+
+  platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .then(moduleRef => {
+    if (!environment.production) {
+          const applicationRef = moduleRef.injector.get(ApplicationRef);
+          const componentRef = applicationRef.components[0];
+          // Ensure that `ng.profiler` exists.
+          enableDebugTools(componentRef);
+    }
+  })
   .catch(err => console.error(err));

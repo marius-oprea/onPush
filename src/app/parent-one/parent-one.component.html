@@ -1,3 +1,17 @@
+<div style="border:1px solid green; display:grid; grid-template: rows; row-gap: 100px;">
+  <div>
+    <b>Parent One</b> {{ checkView() }}
+
+    <button (click)="onClick()">Button</button>
+  </div>
+  <div style="display: grid; grid-template-columns: auto auto; column-gap: 100px;">
+    <app-p1-child-one></app-p1-child-one>
+    <app-p1-child-two></app-p1-child-two>    
+  </div>
+</div>
+
+
+<!--
 {{getId()}}
 
 {{getUser() | json}}
@@ -7,3 +21,4 @@
 <button (click)="markForCheck()">markForCheck()</button>
 
 <button (click)="detectChanges()">detectChanges()</button>
+-->

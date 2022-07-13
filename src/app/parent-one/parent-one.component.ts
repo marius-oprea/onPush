@@ -1,17 +1,19 @@
-import { ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewChecked, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-parent-one',
   templateUrl: './parent-one.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ParentOneComponent implements OnChanges, DoCheck, OnInit {
+export class ParentOneComponent /*implements AfterViewChecked*/ /*implements OnChanges, DoCheck, OnInit*/ {
   @Input() id: number;
   @Input() user: any;
   @Input() department: string;
   oldName: string;
+  counter: number;
   
   constructor(private cdr: ChangeDetectorRef) {
+    this.counter = 0;
     this.id = 0;
     this.oldName = '';
     this.department = '';
@@ -22,17 +24,19 @@ export class ParentOneComponent implements OnChanges, DoCheck, OnInit {
   /*
     Called before ngOnInit() (if the component has bound inputs) and whenever one or more data-bound input properties change.
   */
+ /*
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges', this.id);
     console.log('ngOnChanges', this.user);
     console.log('ngOnChanges', this.department);
     // this.cdr.reattach();
   }
-
+*/
   /*
     Called immediately after ngOnChanges() on every change detection run, and immediately after ngOnInit() on the first run.
     Detect and act upon changes that Angular can't or won't detect on its own. See details and example in Defining custom change detection in this document.
   */
+ /*
   ngDoCheck(): void {
     if (this.oldName === '') {
       console.log('ngDoCheck', this.id);
@@ -53,7 +57,8 @@ export class ParentOneComponent implements OnChanges, DoCheck, OnInit {
       }
     }       
   }
-
+*/
+/*
   markForCheck() {
     this.cdr.markForCheck();
   }
@@ -80,4 +85,20 @@ export class ParentOneComponent implements OnChanges, DoCheck, OnInit {
     console.log('getDepartment');
     return this.department;
   }
+*/
+
+onClick() {
+  // this.counter++;
+}
+
+checkView() {
+  console.log('Parent One');
+}
+/*
+  ngAfterViewChecked() {
+    this.counter++;
+    this.cdr.detectChanges(); 
+    console.log('parent one - checkView')    
+  }  
+  */
 }
