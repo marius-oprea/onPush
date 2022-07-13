@@ -1,4 +1,17 @@
-<div style="border: 1px solid rgb(255, 0, 200); width: calc(100% - 22px); height: 100%; padding: 10px">
-  <b>Primary</b>
-  {{ counter }} <button (click)="onClick()">Button</button>
+<div style="border:1px solid magenta; display:grid; grid-template-rows: 70px calc(100% - 100px); row-gap: 10px;height: 100%; padding: 10px">
+  <div style="padding-bottom: 10px;">
+    <div>
+      <b>Primary</b>
+    </div>
+    <!--
+    <div>
+      ngAfterViewChecked <span style="color:red"><b>{{ counter }}</b></span> times
+    </div>
+    -->
+    <div>
+        <button (click)="onClick()">Button</button>
+    </div>
+    <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
+    <div>ID: {{id}}</div>
+  </div>
 </div>

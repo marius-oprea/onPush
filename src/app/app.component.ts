@@ -1,11 +1,10 @@
-import { AfterContentChecked, AfterViewChecked, AfterViewInit, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { AfterContentChecked, AfterViewChecked, AfterViewInit, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements AfterViewChecked {
   counter: number;
@@ -22,6 +21,10 @@ export class AppComponent implements AfterViewChecked {
   };
   value = 'third component';
 
+  idOne = 1;
+  idTwo = 2;
+  idThree = 3;
+
   constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef) {
     //this.cdr.detach();
     this.counter = 0;
@@ -30,6 +33,14 @@ export class AppComponent implements AfterViewChecked {
   onClickId() {
     this.id++;
   }
+
+  onDownCounter() {
+    this.counter--;
+  }
+
+  onUpCounter() {
+    this.counter++;
+  }  
 
   onClickName() {
     this.user.firstName = 'June';    
@@ -59,13 +70,28 @@ export class AppComponent implements AfterViewChecked {
   }
 */
 
-  onClick() {
-    // this.counter++;
+  onClick() {    
   }
 
+  onGenerateId(): number {
+    return Math.floor(Math.random() * 100);
+  }
+
+  onGenerateOneId() {
+    this.idOne = this.onGenerateId();
+  }
+
+  onGenerateTwoId() {
+    this.idTwo = this.onGenerateId();
+  }
+
+  onGenerateThreeId() {
+    this.idThree = this.onGenerateId();
+  }  
 
   ngAfterViewChecked() {
-   this.counter++;
-   this.cdr.detectChanges();
+    // this.counter++;
+    console.log('App');
+   // this.cdr.detectChanges();
   }  
 }

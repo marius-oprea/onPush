@@ -1,14 +1,29 @@
-<div style="border:1px solid green; display:grid; grid-template-rows: 20px calc(100% - 50px); row-gap: 10px;height: 100%; padding: 10px">
-  <div>
-    <b>Three</b>
-
-    {{ counter }} <button (click)="onClick()">Button</button>
-    
+<div style="border:1px solid green; display:grid; grid-template-rows: 70px 20px calc(100% - 130px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
+  <div style="padding-bottom: 10px;">
+    <div>
+      <b>Three</b>
+    </div>
+    <!--
+    <div>
+      ngAfterViewChecked <span style="color:red"><b>{{ counter }}</b></span> times
+    </div>
+    -->
+    <div>
+      <button (click)="onClick()">Button</button>
+    </div>
+    <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
+    <div>ID: {{id}}</div>
   </div>
+
+  <div>
+    <button (click)="onGenerateDeltaId()">Generate random Delta ID</button>
+    <button (click)="onGenerateEpsilonId()">Generate random Epsilon ID</button>
+  </div>
+
   
   <div style="display: grid; grid-template-columns: auto auto; column-gap: 10px;">
-    <app-delta></app-delta>
-    <app-epsilon></app-epsilon>
+    <app-delta [id]="idDelta"></app-delta>
+    <app-epsilon [id]="idEpsilon"></app-epsilon>
   </div>
 </div>
 

@@ -6,10 +6,12 @@ import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimaryComponent implements AfterViewChecked {
+  @Input() id: number;
   @Input() value: any;
   counter: number;
 
   constructor(private cdr: ChangeDetectorRef) {
+    this.id = 0;
     this.counter = 0;
   }
  
@@ -20,13 +22,20 @@ export class PrimaryComponent implements AfterViewChecked {
   }
 */  
 
+  onClick() {
+  }
 
-onClick() {
-  // this.counter++;
-}
+  onDownCounter() {
+    this.counter--;
+  }
+
+  onUpCounter() {
+    this.counter++;
+  }  
 
   ngAfterViewChecked() {  
-    this.counter++;
-    this.cdr.detectChanges(); 
+    //this.counter++;
+    console.log('App -> Two -> Gamma -> Primary');
+    // this.cdr.detectChanges(); 
   } 
 }

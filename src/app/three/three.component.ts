@@ -6,10 +6,16 @@ import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThreeComponent implements AfterViewChecked {
+  @Input() id: number;
   @Input() value: any;
   counter: number;
+  idDelta: number;
+  idEpsilon: number;
 
   constructor(private cdr: ChangeDetectorRef) {
+    this.idDelta = 0;
+    this.idEpsilon = 0;
+    this.id = 0;
     this.counter = 0;
   }
  
@@ -21,12 +27,32 @@ export class ThreeComponent implements AfterViewChecked {
 */  
 
 
-onClick() {
-  // this.counter++;
-}
+  onClick() {
+  }
+
+  onDownCounter() {
+    this.counter--;
+  }
+
+  onUpCounter() {
+    this.counter++;
+  }
+
+  onGenerateId(): number {
+    return Math.floor(Math.random() * 100);
+  }
+
+  onGenerateDeltaId() {
+    this.idDelta = this.onGenerateId();
+  }
+
+  onGenerateEpsilonId() {
+    this.idEpsilon = this.onGenerateId();
+  }
 
   ngAfterViewChecked() {  
-    this.counter++;
-    this.cdr.detectChanges(); 
+    //this.counter++;
+    console.log('App -> Three');
+    // this.cdr.detectChanges(); 
   } 
 }

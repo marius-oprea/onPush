@@ -3,7 +3,7 @@ import { AfterViewChecked, ApplicationRef, ChangeDetectionStrategy, ChangeDetect
 @Component({
   selector: 'app-one',
   templateUrl: './one.component.html',
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OneComponent implements AfterViewChecked /*implements OnChanges, DoCheck, OnInit*/ {
   @Input() id: number;
@@ -11,8 +11,12 @@ export class OneComponent implements AfterViewChecked /*implements OnChanges, Do
   @Input() department: string;
   oldName: string;
   counter: number;
+  idAlpha: number;
+  idBeta: number;
   
   constructor(private cdr: ChangeDetectorRef) {
+    this.idAlpha = 0;
+    this.idBeta = 0;
     this.counter = 0;
     this.id = 0;
     this.oldName = '';
@@ -90,8 +94,29 @@ export class OneComponent implements AfterViewChecked /*implements OnChanges, Do
   onClick() {
   }
 
-  ngAfterViewChecked() {
+  onDownCounter() {
+    this.counter--;
+  }
+
+  onUpCounter() {
     this.counter++;
-    this.cdr.detectChanges();
+  }  
+
+  onGenerateId(): number {
+    return Math.floor(Math.random() * 100);
+  }
+
+  onGenerateAlphaId() {
+    this.idAlpha = this.onGenerateId();
+  }
+
+  onGenerateBetaId() {
+    this.idBeta = this.onGenerateId();
+  }
+
+  ngAfterViewChecked() {
+    // this.counter++;
+    console.log('App -> One');
+    // this.cdr.detectChanges();
   }  
 }

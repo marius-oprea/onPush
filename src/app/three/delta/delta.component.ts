@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-delta',
@@ -6,17 +6,28 @@ import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeltaComponent implements AfterViewChecked {
+  @Input() id: number;
   counter: number;
   
   constructor(private cdr: ChangeDetectorRef) {
+    this.id = 0;
     this.counter = 0;
   }
 
   onClick() {
   }
 
-  ngAfterViewChecked() {    
+  onDownCounter() {
+    this.counter--;
+  }
+
+  onUpCounter() {
     this.counter++;
-    this.cdr.detectChanges();
+  }  
+
+  ngAfterViewChecked() {    
+    //this.counter++;
+    console.log('App - Three -> Delta');
+    // this.cdr.detectChanges();
   }     
 }

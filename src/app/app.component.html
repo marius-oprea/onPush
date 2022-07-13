@@ -1,27 +1,37 @@
 <div style="background-color: lightgrey; text-align: center; height: calc(100% - 22px); padding: 10px; border: 1px solid black">
-    <div style="border: 1px solid red; padding:10px; height: calc(100% - 22px);">
-        
+<!--
+  https://blogs.halodoc.io/understanding-angular-change-detection-strategy/
+-->  
+
+    <div style="border: 1px solid red; padding:10px; height: calc(100% - 25px);">
       <div style="padding-bottom: 10px;">
         <div>
           <b>App</b>
         </div>
+      <!--
         <div>
-          Detected <span style="color:red"><b>{{ counter }}</b></span> times
+          ngAfterViewChecked <span style="color:red"><b>{{ renderCounter() }}</b></span> times
         </div>
+      -->
         <div>
           <button (click)="onClick()">Button</button>
         </div>
+        <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
       </div>
+      
 
       <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
         <div>
-          <app-one></app-one>
+          <button (click)="onGenerateOneId()">Generate random One ID</button>
+          <app-one [id]="idOne"></app-one>
         </div>
         <div>
-          <app-two></app-two>
+          <button (click)="onGenerateTwoId()">Generate random One ID</button>
+          <app-two [id]="idTwo"></app-two>
         </div>
         <div>
-          <app-three></app-three>
+          <button (click)="onGenerateThreeId()">Generate random One ID</button>
+          <app-three [id]="idThree"></app-three>
         </div>
       </div>
 
