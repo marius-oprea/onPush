@@ -1,23 +1,37 @@
-<div style="background-color: lightgrey; text-align: center;">
-    <div style="display:grid; grid-template-rows: auto auto; border: 1px solid red; row-gap: 100px;">
-      <b>App</b> {{ checkView() }}
-
-      <button (click)="onClick()">Button</button>
-
-      <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 100px;">
-        <div style="border: 1px solid green">
-          <app-parent-one></app-parent-one>
+<div style="background-color: lightgrey; text-align: center; height: calc(100% - 22px); padding: 10px; border: 1px solid black">
+    <div style="border: 1px solid red; padding:10px; height: calc(100% - 22px);">
+        
+      <div style="padding-bottom: 10px;">
+        <div>
+          <b>App</b>
         </div>
-        <div style="border: 1px solid green">
-          <app-parent-two></app-parent-two>
+        <div>
+          Detected <span style="color:red"><b>{{ counter }}</b></span> times
         </div>
-        <div style="border: 1px solid green">
-          <app-parent-three></app-parent-three>
+        <div>
+          <button (click)="onClick()">Button</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
+        <div>
+          <app-one></app-one>
+        </div>
+        <div>
+          <app-two></app-two>
+        </div>
+        <div>
+          <app-three></app-three>
         </div>
       </div>
 
     </div>
 </div>
+
+
+
+
+
 <!--
 <div style="border: 1px solid red">
   <div>
@@ -53,5 +67,6 @@
   <button (click)="onUpdate()">Update App</button>
 </div>
 -->
-
+<!--
 sa pun si observable cu | async sa arat ca tot intra de jdemii de ori fara onPush
+-->

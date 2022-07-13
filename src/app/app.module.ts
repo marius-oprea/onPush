@@ -2,9 +2,9 @@ import { ApplicationRef, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { ParentTwoModule } from './parent-two/parent-two.module';
-import { ParentOneModule } from './parent-one/parent-one.module';
-import { ParentThreeModule } from './parent-three/parent-three.module';
+import { TwoModule } from './two/two.module';
+import { OneModule } from './one/one.module';
+import { ThreeModule } from './three/three.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,9 @@ import { ParentThreeModule } from './parent-three/parent-three.module';
   ],
   imports: [
     BrowserModule,
-    ParentOneModule,
-    ParentTwoModule,
-    ParentThreeModule
+    OneModule,
+    TwoModule,
+    ThreeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

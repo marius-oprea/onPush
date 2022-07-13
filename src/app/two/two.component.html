@@ -1,0 +1,17 @@
+<div style="border:1px solid green; display:grid; grid-template-rows: 20px calc(100% - 50px); row-gap: 10px;height: 100%; padding: 10px">
+  <div>
+    <b>Two</b>
+
+    {{ counter }} <button (click)="onClick()">Button</button>
+  </div>
+
+  <div style="display: grid; grid-template-columns: auto; column-gap: 10px;">
+    <app-gamma></app-gamma>
+  </div>
+
+</div>
+
+
+<!--
+{{getObj() | json}}
+-->
