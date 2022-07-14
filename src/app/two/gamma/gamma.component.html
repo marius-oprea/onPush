@@ -1,8 +1,8 @@
-<div style="border: 1px solid blue; display:grid; grid-template-rows: 70px calc(100% - 100px); row-gap: 10px; width: calc(100% - 25px); height: 100%; padding: 10px">  
+<div style="border: 1px solid blue; display:grid; grid-template-rows: 130px calc(100% - 160px); row-gap: 10px; width: calc(100% - 25px); height: 100%; padding: 10px">  
   <div>
     <div style="padding-bottom: 10px;">
       <div>
-        <b>Gamma</b>
+        <b>Gamma</b> {{ renderView() }}
       </div>
       <!--
       <div>
@@ -14,10 +14,14 @@
       </div>
       <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
       <div>ID: {{id}}</div>
+      <div>USER: {{user | json}}</div>
+      <div>
+        <button (click)="onGeneratePrimaryId()">Generate random Primary ID</button>
+      </div>    
     </div>
   </div>
   
   <div>
-    <app-primary></app-primary>
+    <app-primary [id]="idPrimary" [user]="userPrimary"></app-primary>
   </div>
 </div>

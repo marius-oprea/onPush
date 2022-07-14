@@ -1,7 +1,7 @@
-<div style="border:1px solid green; display:grid; grid-template-rows: 70px 20px calc(100% - 130px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
+<div style="border:1px solid green; display:grid; grid-template-rows: 100px 20px calc(100% - 160px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
   <div style="padding-bottom: 10px;">
     <div>
-      <b>Two</b>
+      <b>Two</b> {{ renderView() }}
     </div>
     <!--
     <div>
@@ -13,13 +13,14 @@
     </div>
     <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
     <div>ID: {{id}}</div>
+    <div>USER: {{user | json}}</div>
   </div>
   <div>
     <button (click)="onGenerateGammaId()">Generate random Gamma ID</button>
   </div>
 
   <div style="display: grid; grid-template-columns: auto; column-gap: 10px;">
-    <app-gamma [id]="idGamma"></app-gamma>
+    <app-gamma [id]="idGamma" [user]="userGamma"></app-gamma>
   </div>
 
 </div>

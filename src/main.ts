@@ -13,10 +13,10 @@ if (environment.production) {
 // https://www.youtube.com/watch?v=-tB-QDrPmuI&ab_channel=MonsterlessonsAcademy
 
 // platformBrowserDynamic().bootstrapModule(AppModule, {ngZone: 'noop'})
-//platformBrowserDynamic().bootstrapModule(AppModule)
-  //.catch(err => console.error(err));
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
 
-
+/*
   import {enableDebugTools} from '@angular/platform-browser';
 
   platformBrowserDynamic()
@@ -30,3 +30,4 @@ if (environment.production) {
     }
   })
   .catch(err => console.error(err));
+*/

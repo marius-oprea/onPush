@@ -3,10 +3,12 @@
   https://blogs.halodoc.io/understanding-angular-change-detection-strategy/
 -->  
 
+<button (click)="detectChanges()">Detect Changes</button>
+
     <div style="border: 1px solid red; padding:10px; height: calc(100% - 25px);">
       <div style="padding-bottom: 10px;">
         <div>
-          <b>App</b>
+          <b>App</b> {{ renderView() }}
         </div>
       <!--
         <div>
@@ -23,15 +25,18 @@
       <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
         <div>
           <button (click)="onGenerateOneId()">Generate random One ID</button>
-          <app-one [id]="idOne"></app-one>
+          <button (click)="onChangeUserOne()">Change user first name</button>
+          <app-one [id]="idOne" [user]="userOne"></app-one>
         </div>
         <div>
           <button (click)="onGenerateTwoId()">Generate random One ID</button>
-          <app-two [id]="idTwo"></app-two>
+          <button (click)="onChangeUserTwo()">Change user first name</button>
+          <app-two [id]="idTwo" [user]="userTwo"></app-two>
         </div>
         <div>
           <button (click)="onGenerateThreeId()">Generate random One ID</button>
-          <app-three [id]="idThree"></app-three>
+          <button (click)="onChangeUserThree()">Change user first name</button>
+          <app-three [id]="idThree" [user]="userThree"></app-three>
         </div>
       </div>
 

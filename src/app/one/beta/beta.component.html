@@ -1,7 +1,7 @@
-<div style="border:1px solid blue; display:grid; grid-template-rows: 70px calc(100% - 100px); row-gap: 10px;height: 100%; padding: 10px">
+<div style="border:1px solid blue; display:grid; grid-template-rows: 70px calc(100% - 80px); row-gap: 10px;height: 100%; padding: 10px">
   <div style="padding-bottom: 10px;">
     <div>
-      <b>Beta</b>
+      <b>Beta</b> {{ renderView() }}
     </div>
     <!--
     <div>
@@ -13,5 +13,6 @@
     </div>
     <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
     <div>ID: {{id}}</div>
+    <div>USER: {{user | json}}</div>
   </div>
 </div>

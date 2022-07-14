@@ -1,11 +1,13 @@
-import { AfterViewChecked, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewChecked, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { hightlight } from '../shared/highlight';
 
 @Component({
   selector: 'app-one',
   templateUrl: './one.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./one.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class OneComponent implements AfterViewChecked /*implements OnChanges, DoCheck, OnInit*/ {
+export class OneComponent implements AfterViewChecked, OnChanges, DoCheck /*implements OnChanges, DoCheck, OnInit*/ {
   @Input() id: number;
   @Input() user: any;
   @Input() department: string;
@@ -13,14 +15,23 @@ export class OneComponent implements AfterViewChecked /*implements OnChanges, Do
   counter: number;
   idAlpha: number;
   idBeta: number;
+  userAlpha = {
+    firstName: 'John',
+    lastName: 'Doe'
+  };
+  userBeta = {
+    firstName: 'John',
+    lastName: 'Doe'
+  };  
   
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
     this.idAlpha = 0;
     this.idBeta = 0;
     this.counter = 0;
     this.id = 0;
     this.oldName = '';
     this.department = '';
+
     //this.cdr.detach();
     // this.cdr.checkNoChanges();
   }
@@ -114,9 +125,46 @@ export class OneComponent implements AfterViewChecked /*implements OnChanges, Do
     this.idBeta = this.onGenerateId();
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(this.user)
+  }
+
+  ngDoCheck() {
+    // console.log(this.user)
+    //this.cdr.markForCheck();
+    //this.cdr.detectChanges();
+  }
+
+  detectChanges() {
+    this.cdr.detectChanges();
+  }
+
+  markForCheck() {
+    this.cdr.markForCheck();    
+  }
+
+  checkNoChanges() {
+    // USE IT ONLY IN DEVELOPMENT MODE
+    this.cdr.checkNoChanges();
+  }
+
+  detach() {
+    this.cdr.detach();
+  }
+
+  reattach() {
+    this.cdr.reattach();
+  }
+
+  renderView() {
+    hightlight(this.element);
+  }
+
   ngAfterViewChecked() {
     // this.counter++;
     console.log('App -> One');
+    
     // this.cdr.detectChanges();
-  }  
+    // this.cdr.markForCheck();
+  }   
 }
