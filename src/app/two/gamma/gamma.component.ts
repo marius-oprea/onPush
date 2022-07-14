@@ -1,4 +1,5 @@
 import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { hightlight } from 'src/app/shared/highlight';
 
 @Component({
@@ -10,6 +11,13 @@ import { hightlight } from 'src/app/shared/highlight';
 export class GammaComponent {
   @Input() id: number;
   @Input() user: any;
+  observable$: Subject<any>;
+  observableSource: string[];
+  userOne = {
+    firstName: 'John',
+    lastName: 'Doe'
+  };
+
   counter: number;
   idPrimary: number;
   userPrimary = {
@@ -18,9 +26,30 @@ export class GammaComponent {
   };    
 
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+    this.observableSource = ['a', 'b', 'c'];
+    this.observable$ = new BehaviorSubject(this.observableSource);
+
     this.idPrimary = 0;
     this.id = 0;
     this.counter = 0;
+  }
+
+  onGenerateId(): number {
+    return Math.floor(Math.random() * 100);
+  }
+
+  onGenerateOneId() {
+    this.idPrimary = this.onGenerateId();
+  }
+
+  onChangeUserOne() {
+    this.userOne.firstName = 'Adam';
+    /*
+    this.userOne = {
+      firstName: 'Adam',
+      lastName: 'Doe'
+    };
+    */
   }
 
   onClick() {
@@ -28,6 +57,11 @@ export class GammaComponent {
 
   onGeneratePrimaryId() {
     this.idPrimary = Math.floor(Math.random() * 100);
+  }
+
+  onChangeObservable() {
+    this.observableSource = ['g'];
+    this.observable$.next(this.observableSource);
   }
 
   renderView() {

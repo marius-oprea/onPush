@@ -8,7 +8,12 @@ import { hightlight } from 'src/app/shared/highlight';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
+  @Input() id: number
+  @Input() user: any;
+  @Input() observable: any;
+
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+    this.id = 0;
   }
  
   onClick() {
@@ -18,6 +23,28 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
     console.log('App -> Two -> Gamma -> Primary');
     hightlight(this.element);
   } 
+
+  detectChanges() {
+    this.cdr.detectChanges();
+  }
+
+  markForCheck() {
+    this.cdr.markForCheck();    
+  }
+
+  checkNoChanges() {
+    // USE IT ONLY IN DEVELOPMENT MODE
+    this.cdr.checkNoChanges();
+  }
+
+  detach() {
+    this.cdr.detach();
+  }
+
+  reattach() {
+    this.cdr.reattach();
+  }
+
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('App -> Two -> Gamma -> Primary - ngOnChanges');
@@ -29,6 +56,8 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   ngDoCheck(): void {
     console.log('App -> Two -> Gamma -> Primary - ngDoCheck');
+    // this.cdr.markForCheck();
+    // this.cdr.detectChamges();
   }
 
   ngAfterContentInit() {

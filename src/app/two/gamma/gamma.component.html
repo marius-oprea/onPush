@@ -1,4 +1,4 @@
-<div style="border: 1px solid blue; display:grid; grid-template-rows: 50px calc(100% - 70px); height: 100%; padding: 10px">  
+<div style="border: 1px solid blue; display:grid; grid-template-rows: 50px calc(100% - 100px); height: 100%; padding: 10px">  
   <div>
     <div style="padding-bottom: 10px;">
       <div>
@@ -9,7 +9,13 @@
       </div>
     </div>
   </div>
-  <div>
-    <app-primary></app-primary>
+  <div >
+    <div *ngIf="true" style="padding-bottom: 10px">
+      <button (click)="onGenerateOneId()">Generate random One ID</button>
+      <button (click)="onChangeUserOne()">Change user first name</button>
+      <button (click)="onChangeObservable()">Change observable</button>
+    </div>
+  
+    <app-primary [id]="idPrimary" [user]="userOne" [observable]="observable$"></app-primary>
   </div>
 </div>

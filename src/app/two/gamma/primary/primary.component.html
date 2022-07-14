@@ -3,13 +3,24 @@
     <div>
       <b>Primary</b> {{ renderView() }}
     </div>
-    <!--
     <div>
-      ngAfterViewChecked <span style="color:red"><b>{{ counter }}</b></span> times
+      <button (click)="onClick()">Button</button>
     </div>
-    -->
-    <div>
-        <button (click)="onClick()">Button</button>
-    </div>
+
+    <ng-container *ngIf="true">
+      <div style="padding: 10px">
+        <button (click)="detectChanges()">detectChanges</button>
+        <button (click)="markForCheck()">markForCheck</button>
+        <button (click)="checkNoChanges()">checkNoChanges</button>
+        <button (click)="detach()">detach</button>
+        <button (click)="reattach()">reattach</button>
+      </div>
+      
+      <div>ID: {{id}}</div>
+      <div>USER: {{user | json}}</div>
+
+      <div>OBSERVABLE {{ observable | async | json }}</div>
+      ( AsyncPipe has markForCheck built-in )
+    </ng-container>
   </div>
 </div>
