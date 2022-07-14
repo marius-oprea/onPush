@@ -5,48 +5,23 @@ import { hightlight } from '../shared/highlight';
   selector: 'app-three',
   templateUrl: './three.component.html',
   styleUrls: ['./three.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ThreeComponent implements AfterViewChecked {
+export class ThreeComponent {
   @Input() id: number;
   @Input() user: any;
   @Input() value: any;
-  counter: number;
+
   idDelta: number;
   idEpsilon: number;
-  userDelta = {
-    firstName: 'John',
-    lastName: 'Doe'
-  };  
-  userEpsilon = {
-    firstName: 'John',
-    lastName: 'Doe'
-  };    
 
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
     this.idDelta = 0;
     this.idEpsilon = 0;
     this.id = 0;
-    this.counter = 0;
   }
  
-/*
-  getValue() {
-    console.log('getValue');
-    return this.value;
-  }
-*/  
-
-
   onClick() {
-  }
-
-  onDownCounter() {
-    this.counter--;
-  }
-
-  onUpCounter() {
-    this.counter++;
   }
 
   onGenerateId(): number {
@@ -62,13 +37,7 @@ export class ThreeComponent implements AfterViewChecked {
   }
 
   renderView() {
+    console.log('App -> Three');
     hightlight(this.element);
   }  
-
-  ngAfterViewChecked() {  
-    //this.counter++;
-    console.log('App -> Three');
-    // this.cdr.detectChanges(); 
-    // hightlight(this.element);
-  } 
 }

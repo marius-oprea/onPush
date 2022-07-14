@@ -20,7 +20,7 @@ import { ThreeModule } from './three/three.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
+  /*
   constructor(applicationRef: ApplicationRef) {
     const originalTick = applicationRef.tick;
     applicationRef.tick = function() {
@@ -33,5 +33,5 @@ export class AppModule {
       return retValue;
     };
   }
-  
+  */
  }

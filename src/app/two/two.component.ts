@@ -5,9 +5,9 @@ import { hightlight } from '../shared/highlight';
   selector: 'app-two',
   templateUrl: './two.component.html',
   styleUrls: ['./two.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TwoComponent implements AfterViewChecked {
+export class TwoComponent {
   @Input() id: number;
   @Input() user: any;
   @Input() obj: any;
@@ -25,22 +25,7 @@ export class TwoComponent implements AfterViewChecked {
     // this.cdr.detach();
   }
 
-/*
-  getObj() {
-    console.log('getObj');
-    return this.obj;
-  }
-*/  
-
   onClick() {
-  }
-
-  onDownCounter() {
-    this.counter--;
-  }
-
-  onUpCounter() {
-    this.counter++;
   }
 
   onGenerateGammaId() {
@@ -48,14 +33,7 @@ export class TwoComponent implements AfterViewChecked {
   }
 
   renderView() {
+    console.log('App -> Two');
     hightlight(this.element);
   }  
-
-  ngAfterViewChecked() {    
-    //this.counter++;
-    console.log('App -> Two');
-    // this.cdr.detectChanges();
-    // this.cdr.markForCheck();
-    // hightlight(this.element);
-  } 
 }

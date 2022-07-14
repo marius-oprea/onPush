@@ -1,49 +1,49 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { hightlight } from 'src/app/shared/highlight';
 
 @Component({
   selector: 'app-primary',
   templateUrl: './primary.component.html',
   styleUrls: ['./primary.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PrimaryComponent implements AfterViewChecked {
-  @Input() id: number;
-  @Input() user: any;
-  @Input() value: any;
-  counter: number;
-
+export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
-    this.id = 0;
-    this.counter = 0;
   }
  
-/*
-  getValue() {
-    console.log('getValue');
-    return this.value;
-  }
-*/  
-
   onClick() {
   }
 
-  onDownCounter() {
-    this.counter--;
-  }
-
-  onUpCounter() {
-    this.counter++;
-  }
-
   renderView() {
-    hightlight(this.element);
-  }  
-
-  ngAfterViewChecked() {  
-    //this.counter++;
     console.log('App -> Two -> Gamma -> Primary');
-    // this.cdr.detectChanges(); 
-    // hightlight(this.element);
+    hightlight(this.element);
   } 
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('App -> Two -> Gamma -> Primary - ngOnChanges');
+  }
+
+  ngOnInit(): void {
+    console.log('App -> Two -> Gamma -> Primary - ngOnInit');
+  }
+
+  ngDoCheck(): void {
+    console.log('App -> Two -> Gamma -> Primary - ngDoCheck');
+  }
+
+  ngAfterContentInit() {
+    console.log('App -> Two -> Gamma -> Primary - ngAfterContentInit');
+  }
+
+  ngAfterContentChecked(): void {
+    console.log('App -> Two -> Gamma -> Primary - ngAfterContentChecked');
+  }
+
+  ngAfterViewInit(): void {
+    console.log('App -> Two -> Gamma -> Primary - ngAfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('App -> Two -> Gamma -> Primary - ngAfterViewChecked');
+  }  
 }

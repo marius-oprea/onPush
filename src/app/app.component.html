@@ -1,87 +1,42 @@
-<div style="background-color: lightgrey; text-align: center; height: calc(100% - 22px); padding: 10px; border: 1px solid black">
 <!--
   https://blogs.halodoc.io/understanding-angular-change-detection-strategy/
 -->  
 
 <button (click)="detectChanges()">Detect Changes</button>
 
-    <div style="border: 1px solid red; padding:10px; height: calc(100% - 25px);">
-      <div style="padding-bottom: 10px;">
-        <div>
-          <b>App</b> {{ renderView() }}
-        </div>
-      <!--
-        <div>
-          ngAfterViewChecked <span style="color:red"><b>{{ renderCounter() }}</b></span> times
-        </div>
-      -->
-        <div>
-          <button (click)="onClick()">Button</button>
-        </div>
-        <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
-      </div>
-      
-
-      <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
-        <div>
-          <button (click)="onGenerateOneId()">Generate random One ID</button>
-          <button (click)="onChangeUserOne()">Change user first name</button>
-          <app-one [id]="idOne" [user]="userOne"></app-one>
-        </div>
-        <div>
-          <button (click)="onGenerateTwoId()">Generate random One ID</button>
-          <button (click)="onChangeUserTwo()">Change user first name</button>
-          <app-two [id]="idTwo" [user]="userTwo"></app-two>
-        </div>
-        <div>
-          <button (click)="onGenerateThreeId()">Generate random One ID</button>
-          <button (click)="onChangeUserThree()">Change user first name</button>
-          <app-three [id]="idThree" [user]="userThree"></app-three>
-        </div>
-      </div>
-
+<div style="border: 1px solid red; padding:10px; height: calc(100% - 50px);">
+  <div style="padding-bottom: 10px;">
+    <div>
+      <b>App</b> {{ renderView() }}
     </div>
+    <div>
+      <button (click)="onClick()">Button</button>
+    </div>
+  </div>
+ 
+  <!--
+  <app-one [id]="idOne" [user]="userOne" [observable]="observable$"></app-one>
+  -->
+
+  <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
+    <div>
+      <button (click)="onGenerateOneId()">Generate random One ID</button>
+      <button (click)="onChangeUserOne()">Change user first name</button>
+      <button (click)="onChangeObservable()">Change observable</button>
+  
+      <!--      
+      <app-one [id]="idOne" [user]="userOne"></app-one>
+      -->
+      <app-one [id]="idOne" [user]="userOne" [observable]="observable$"></app-one>
+
+    </div>    
+    <div>
+      <app-two [id]="idTwo" [user]="userTwo"></app-two>
+    </div>
+    <div>
+      <app-three [id]="idThree" [user]="userThree"></app-three>
+    </div>
+  </div>
+-
 </div>
 
-
-
-
-
-<!--
-<div style="border: 1px solid red">
-  <div>
-    <app-sample [id]="id" [user]="user" [department]="department"></app-sample>
-  </div>
-
-  <div>
-    <button (click)="onClickId()">Change id</button>
-    <button (click)="onClickName()">Change First Name</button>
-    <button (click)="onClickDepartment()">Change Department</button>
-  </div>
-</div>
-
-<div style="border: 1px solid blue">
-  <div>
-    <app-other [obj]="obj"></app-other>
-  </div>
-  <div>
-    <button (click)="onClickObj()">Change obj</button>
-  </div>
-</div>
-
-<div style="border: 1px solid yellow">
-  <div>
-    <app-third [value]="value"></app-third>
-  </div>
-  <div>
-    <button (click)="onClickValue()">Change value</button>
-  </div>
-</div>
-
-<div>
-  <button (click)="onUpdate()">Update App</button>
-</div>
--->
-<!--
-sa pun si observable cu | async sa arat ca tot intra de jdemii de ori fara onPush
--->

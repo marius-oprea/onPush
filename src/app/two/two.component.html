@@ -3,22 +3,10 @@
     <div>
       <b>Two</b> {{ renderView() }}
     </div>
-    <!--
-    <div>
-      ngAfterViewChecked <span style="color:red"><b>{{ counter }}</b></span> times
-    </div>
-    -->
     <div>
       <button (click)="onClick()">Button</button>
     </div>
-    <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
-    <div>ID: {{id}}</div>
-    <div>USER: {{user | json}}</div>
   </div>
-  <div>
-    <button (click)="onGenerateGammaId()">Generate random Gamma ID</button>
-  </div>
-
   <div style="display: grid; grid-template-columns: auto; column-gap: 10px;">
     <app-gamma [id]="idGamma" [user]="userGamma"></app-gamma>
   </div>

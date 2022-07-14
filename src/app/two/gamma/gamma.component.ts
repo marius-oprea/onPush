@@ -5,9 +5,9 @@ import { hightlight } from 'src/app/shared/highlight';
   selector: 'app-gamma',
   templateUrl: './gamma.component.html',
   styleUrls: ['./gamma.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class GammaComponent implements AfterViewChecked {
+export class GammaComponent {
   @Input() id: number;
   @Input() user: any;
   counter: number;
@@ -16,7 +16,6 @@ export class GammaComponent implements AfterViewChecked {
     firstName: 'John',
     lastName: 'Doe'
   };    
-
 
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
     this.idPrimary = 0;
@@ -27,26 +26,12 @@ export class GammaComponent implements AfterViewChecked {
   onClick() {
   }
 
-  onDownCounter() {
-    this.counter--;
-  }
-
-  onUpCounter() {
-    this.counter++;
-  }  
-
   onGeneratePrimaryId() {
     this.idPrimary = Math.floor(Math.random() * 100);
   }
 
   renderView() {
+    console.log('App -> Two -> Gamma');
     hightlight(this.element);
   }  
-  
-  ngAfterViewChecked() {    
-    //this.counter++;
-    console.log('App -> Two -> Gamma');
-    // this.cdr.detectChanges();
-    // hightlight(this.element);
-  }   
 }

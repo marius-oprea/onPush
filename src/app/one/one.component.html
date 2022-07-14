@@ -1,8 +1,12 @@
-<div style="border:1px solid green; display:grid; grid-template-rows: 100px 20px calc(100% - 160px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
+<div style="border:1px solid green; display:grid; grid-template-rows: 130px 20px calc(100% - 190px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
   <div style="padding-bottom: 10px;">
     <div>
       <b>One</b> {{ renderView() }}
     </div>
+    <div>
+      <button (click)="onClick()">Button</button>
+    </div>
+
     <div>
       <button (click)="detectChanges()">detectChanges</button>
       <button (click)="markForCheck()">markForCheck</button>
@@ -10,40 +14,17 @@
       <button (click)="detach()">detach</button>
       <button (click)="reattach()">reattach</button>
     </div>
-    <!--
-    <div>
-      ngAfterViewChecked <span style="color:red"><b>{{ counter }}</b></span> times
-    </div>
-  -->
-    <div>
-      <button (click)="onClick()">Button</button>
-    </div>
-    <div><button (click)="onDownCounter()">-</button>Counter: {{counter}}<button (click)="onUpCounter()">+</button></div>
     <div>ID: {{id}}</div>
     <div>USER: {{user | json}}</div>
+
+    <div>OBSERVABLE {{ observable | async | json }}</div>
+    ( AsyncPipe has markForCheck built-in )
+
   </div>
 
-  <div>
-    <button (click)="onGenerateAlphaId()">Generate random Alpha ID</button>
-    <button (click)="onGenerateBetaId()">Generate random Beta ID</button>
-  </div>
   <div style="display: grid; grid-template-columns: auto auto; column-gap: 10px;">
-    <app-alpha [id]="idAlpha" [user]="userAlpha"></app-alpha>
+    <app-alpha [id]="idAlpha"></app-alpha>
     
-    <app-beta [id]="idBeta" [user]="userBeta"></app-beta>
+    <app-beta [id]="idBeta"></app-beta>
   </div>
-
 </div>
-
-
-<!--
-{{getId()}}
-
-{{getUser() | json}}
-
-{{getDepartment()}}
-
-<button (click)="markForCheck()">markForCheck()</button>
-
-<button (click)="detectChanges()">detectChanges()</button>
--->
