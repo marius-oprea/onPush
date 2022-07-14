@@ -5,7 +5,7 @@ import { hightlight } from 'src/app/shared/highlight';
   selector: 'app-gamma',
   templateUrl: './gamma.component.html',
   styleUrls: ['./gamma.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GammaComponent {
   @Input() id: number;

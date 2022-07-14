@@ -5,7 +5,7 @@ import { hightlight } from 'src/app/shared/highlight';
   selector: 'app-delta',
   templateUrl: './delta.component.html',
   styleUrls: ['./delta.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeltaComponent {  
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {

@@ -1,4 +1,9 @@
-<div style="border:1px solid green; display:grid; grid-template-rows: 130px 20px calc(100% - 190px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
+
+<div style="border:1px solid green; display:grid; grid-template-rows: 130px 20px calc(100% - 190px); row-gap: 10px;height: calc(100% - 21px); padding: 10px">
+
+<!--
+<div style="border:1px solid green; display:grid; grid-template-rows: 40px calc(100% - 70px); row-gap: 10px;height: calc(100% - 21px); padding: 10px">
+-->  
   <div style="padding-bottom: 10px;">
     <div>
       <b>One</b> {{ renderView() }}
@@ -7,18 +12,20 @@
       <button (click)="onClick()">Button</button>
     </div>
 
-    <div>
-      <button (click)="detectChanges()">detectChanges</button>
-      <button (click)="markForCheck()">markForCheck</button>
-      <button (click)="checkNoChanges()">checkNoChanges</button>
-      <button (click)="detach()">detach</button>
-      <button (click)="reattach()">reattach</button>
-    </div>
-    <div>ID: {{id}}</div>
-    <div>USER: {{user | json}}</div>
+    <ng-container *ngIf="true">
+      <div>
+        <button (click)="detectChanges()">detectChanges</button>
+        <button (click)="markForCheck()">markForCheck</button>
+        <button (click)="checkNoChanges()">checkNoChanges</button>
+        <button (click)="detach()">detach</button>
+        <button (click)="reattach()">reattach</button>
+      </div>
+      <div>ID: {{id}}</div>
+      <div>USER: {{user | json}}</div>
 
-    <div>OBSERVABLE {{ observable | async | json }}</div>
-    ( AsyncPipe has markForCheck built-in )
+      <div>OBSERVABLE {{ observable | async | json }}</div>
+      ( AsyncPipe has markForCheck built-in )
+    </ng-container>
 
   </div>
 

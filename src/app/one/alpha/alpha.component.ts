@@ -5,7 +5,7 @@ import { hightlight } from 'src/app/shared/highlight';
   selector: 'app-alpha',
   templateUrl: './alpha.component.html',
   styleUrls: ['./alpha.component.scss'],
-  // changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlphaComponent {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {

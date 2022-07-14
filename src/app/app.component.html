@@ -4,7 +4,7 @@
 
 <button (click)="detectChanges()">Detect Changes</button>
 
-<div style="border: 1px solid red; padding:10px; height: calc(100% - 50px);">
+<div style="border: 1px solid red; padding:10px; height: calc(100% - 50px); margin-top: 10px">
   <div style="padding-bottom: 10px;">
     <div>
       <b>App</b> {{ renderView() }}
@@ -18,23 +18,26 @@
   <app-one [id]="idOne" [user]="userOne" [observable]="observable$"></app-one>
   -->
 
-  <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 90px)">        
+  <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 50px)">        
     <div>
-      <button (click)="onGenerateOneId()">Generate random One ID</button>
-      <button (click)="onChangeUserOne()">Change user first name</button>
-      <button (click)="onChangeObservable()">Change observable</button>
-  
-      <!--      
-      <app-one [id]="idOne" [user]="userOne"></app-one>
-      -->
+      <ng-container *ngIf="false">
+        <button (click)="onGenerateOneId()">Generate random One ID</button>
+        <button (click)="onChangeUserOne()">Change user first name</button>
+        <button (click)="onChangeObservable()">Change observable</button>
+      </ng-container>
+
       <app-one [id]="idOne" [user]="userOne" [observable]="observable$"></app-one>
 
     </div>    
     <div>
-      <app-two [id]="idTwo" [user]="userTwo"></app-two>
+      
+      <app-two></app-two>
+      
     </div>
     <div>
-      <app-three [id]="idThree" [user]="userThree"></app-three>
+      
+      <app-three></app-three>
+      
     </div>
   </div>
 -

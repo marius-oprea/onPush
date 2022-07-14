@@ -58,24 +58,6 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
     };
 */
   }
-/*
-  onClickDepartment() {
-    this.department = 'HR';
-  }
-
-  onClickObj() {
-    this.obj.b = 22;
-  }
-
-  onClickValue() {
-    this.value = 'fourth component';
-  }
-
-  onUpdate() {
-    this.appRef.tick();
-    // setTimeout(() => {});
-  }
-*/
 
   onClick() {    
   }

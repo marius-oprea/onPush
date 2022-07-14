@@ -5,7 +5,7 @@ import { hightlight } from 'src/app/shared/highlight';
   selector: 'app-epsilon',
   templateUrl: './epsilon.component.html',
   styleUrls: ['./epsilon.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EpsilonComponent {  
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {

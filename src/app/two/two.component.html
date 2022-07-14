@@ -1,4 +1,5 @@
-<div style="border:1px solid green; display:grid; grid-template-rows: 100px 20px calc(100% - 160px); row-gap: 10px;height: calc(100% - 20px); padding: 10px">
+<div style="border:1px solid green; display:grid; grid-template-rows: 40px calc(100% - 70px); row-gap: 10px; height: calc(100% - 21px); padding: 10px">
+
   <div style="padding-bottom: 10px;">
     <div>
       <b>Two</b> {{ renderView() }}
@@ -7,13 +8,8 @@
       <button (click)="onClick()">Button</button>
     </div>
   </div>
-  <div style="display: grid; grid-template-columns: auto; column-gap: 10px;">
-    <app-gamma [id]="idGamma" [user]="userGamma"></app-gamma>
+  <div>
+    <app-gamma></app-gamma>
   </div>
 
 </div>
-
-
-<!--
-{{getObj() | json}}
--->
