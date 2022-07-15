@@ -1,12 +1,12 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
-import { hightlight } from 'src/app/shared/highlight';
+import { HightlightService } from 'src/app/shared/highlight.service';
 
 @Component({
   selector: 'app-gamma',
   templateUrl: './gamma.component.html',
   styleUrls: ['./gamma.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GammaComponent {
   @Input() id: number;
@@ -25,7 +25,7 @@ export class GammaComponent {
     lastName: 'Doe'
   };    
 
-  constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+  constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
     this.observableSource = ['a', 'b', 'c'];
     this.observable$ = new BehaviorSubject(this.observableSource);
 
@@ -66,6 +66,6 @@ export class GammaComponent {
 
   renderView() {
     console.log('App -> Two -> Gamma');
-    hightlight(this.element);
+    this.highlightService.run(this.element);
   }  
 }

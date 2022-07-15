@@ -12,13 +12,16 @@ if (environment.production) {
 // https://www.youtube.com/watch?v=aDnKmuQWTyE&ab_channel=FrontPro
 // https://www.youtube.com/watch?v=-tB-QDrPmuI&ab_channel=MonsterlessonsAcademy
 
+
 // platformBrowserDynamic().bootstrapModule(AppModule, {ngZone: 'noop'})
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
 
-/*
-  import {enableDebugTools} from '@angular/platform-browser';
 
+
+  // ENTER the following in Console:  ng.profiler.timeChangeDetection({ record: true })
+  import {enableDebugTools} from '@angular/platform-browser';
+/*
   platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .then(moduleRef => {

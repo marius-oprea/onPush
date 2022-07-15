@@ -1,14 +1,14 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
-import { hightlight } from 'src/app/shared/highlight';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from '@angular/core';
+import { HightlightService } from 'src/app/shared/highlight.service';
 
 @Component({
   selector: 'app-delta',
   templateUrl: './delta.component.html',
   styleUrls: ['./delta.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeltaComponent {  
-  constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+  constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
   }
 
   onClick() {
@@ -16,6 +16,6 @@ export class DeltaComponent {
 
   renderView() {
     console.log('App - Three -> Delta');
-    hightlight(this.element);
+    this.highlightService.run(this.element);
   }    
 }

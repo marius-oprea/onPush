@@ -1,14 +1,14 @@
-import { AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
-import { hightlight } from 'src/app/shared/highlight';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef } from '@angular/core';
+import { HightlightService } from 'src/app/shared/highlight.service';
 
 @Component({
   selector: 'app-alpha',
   templateUrl: './alpha.component.html',
   styleUrls: ['./alpha.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlphaComponent {
-  constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+  constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
   }
 
   onClick() {
@@ -16,6 +16,6 @@ export class AlphaComponent {
 
   renderView() {
     console.log('App -> One -> Alpha');
-    hightlight(this.element);
+    this.highlightService.run(this.element);
   }  
 }

@@ -1,18 +1,18 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { hightlight } from 'src/app/shared/highlight';
+import { HightlightService } from 'src/app/shared/highlight.service';
 
 @Component({
   selector: 'app-primary',
   templateUrl: './primary.component.html',
   styleUrls: ['./primary.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   @Input() id: number
   @Input() user: any;
   @Input() observable: any;
 
-  constructor(private cdr: ChangeDetectorRef, private element: ElementRef) {
+  constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
     this.id = 0;
   }
  
@@ -21,7 +21,7 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
 
   renderView() {
     console.log('App -> Two -> Gamma -> Primary');
-    hightlight(this.element);
+    this.highlightService.run(this.element);
   } 
 
   detectChanges() {

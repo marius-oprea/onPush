@@ -1,18 +1,28 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ApplicationRef, ChangeDetectionStrategy, ChangeDetectorRef, Component, DoCheck, ElementRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { hightlight } from './shared/highlight';
-
+import {
+  AfterContentChecked,
+  AfterContentInit,
+  AfterViewChecked, 
+  AfterViewInit, 
+  ApplicationRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  DoCheck,
+  ElementRef,
+  OnChanges,
+  OnInit,
+  SimpleChanges 
+} from '@angular/core';
+import { HightlightService } from './shared/highlight.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
-  counter: number;
-  constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef) {
-    this.counter = 0;
+  constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
   }
 
   onClick() {    
@@ -24,7 +34,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
 
   renderView() {
     console.log('App');
-    hightlight(this.element);
+    this.highlightService.run(this.element);
   }  
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -53,6 +63,5 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
 
   ngAfterViewChecked() {
     console.log('App - ngAfterViewChecked');
-  }
- 
+  } 
 }
