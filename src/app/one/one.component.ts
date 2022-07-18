@@ -5,7 +5,7 @@ import { HightlightService } from '../shared/highlight.service';
   selector: 'app-one',
   templateUrl: './one.component.html',
   styleUrls: ['./one.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OneComponent {  
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {

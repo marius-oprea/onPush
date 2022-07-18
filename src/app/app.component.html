@@ -1,16 +1,11 @@
-<!--
-  https://blogs.halodoc.io/understanding-angular-change-detection-strategy/
--->  
-
-<button (click)="detectChanges()">Detect Changes</button>
-
-<div style="border: 1px solid red; padding:10px; height: calc(100% - 50px); margin-top: 10px">
-  <div style="padding-bottom: 10px;">
+<button mat-raised-button color="primary" (click)="detectChanges()">Detect Changes</button>
+<mat-card class="mat-elevation-z4" style="padding:30px; margin-top: 30px">
+  <div style="padding-bottom: 30px;">
     <div>
       <b>App</b> {{ renderView() }}
     </div>
     <div>
-      <button (click)="onClick()">Button</button>
+      <button mat-raised-button color="primary" (click)="onClick()">Button</button>
     </div>
   </div>
  
@@ -18,7 +13,7 @@
   <app-one [id]="idOne" [user]="userOne" [observable]="observable$"></app-one>
   -->
 
-  <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 10px;  height: calc(100% - 50px)">        
+  <div style="display: grid; grid-template-columns: auto auto auto; justify-self: center; column-gap: 30px;">        
     <div>
       <app-one></app-one>
     </div>    
@@ -29,6 +24,4 @@
       <app-three></app-three>
     </div>
   </div>
--
-</div>
-
+</mat-card>

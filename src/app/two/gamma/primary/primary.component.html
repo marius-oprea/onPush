@@ -1,26 +1,35 @@
-<div style="border:1px solid magenta; display:grid; grid-template-rows: 80px calc(100% - 90px); row-gap: 10px;height: 100%; padding: 10px">
-  <div style="padding-bottom: 10px;">
+<mat-card class="mat-elevation-z4">
+  <div style="padding-bottom: 30px;">
     <div>
       <b>Primary</b> {{ renderView() }}
     </div>
     <div>
-      <button (click)="onClick()">Button</button>
+      <button mat-raised-button color="primary" (click)="onClick()">Button</button>
     </div>
 
     <ng-container *ngIf="true">
-      <div style="padding: 10px">
-        <button (click)="detectChanges()">detectChanges</button>
-        <button (click)="markForCheck()">markForCheck</button>
-        <button (click)="checkNoChanges()">checkNoChanges</button>
-        <button (click)="detach()">detach</button>
-        <button (click)="reattach()">reattach</button>
+      <div style="padding: 30px">
+        <span style="padding:10px">
+          <button mat-raised-button color="primary" (click)="detectChanges()">detectChanges</button>
+        </span>
+        <span style="padding:10px">
+          <button mat-raised-button color="primary" (click)="markForCheck()">markForCheck</button></span>
+        <span style="padding:10px">
+          <button mat-raised-button color="primary" (click)="checkNoChanges()">checkNoChanges</button>
+        </span>
+        <span style="padding:10px">
+          <button mat-raised-button color="primary" (click)="detach()">detach</button>
+        </span>
+        <span style="padding:10px">
+          <button mat-raised-button color="primary" (click)="reattach()">reattach</button>
+        </span>                                
       </div>
       
-      <div>ID: {{id}}</div>
-      <div>USER: {{user | json}}</div>
+      <div><b>ID:</b> {{id}}</div>
+      <div><b>USER:</b> {{user | json}}</div>
 
-      <div>OBSERVABLE {{ observable | async | json }}</div>
+      <div><b>OBSERVABLE:</b> {{ observable | async | json }}</div>
       ( AsyncPipe has markForCheck built-in )
     </ng-container>
   </div>
-</div>
+</mat-card>

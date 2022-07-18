@@ -8,7 +8,7 @@ export class HightlightService {
   }
 
   run(el: any, className = 'checked') {
-    const a = el.nativeElement.querySelector('div');
+    const a = el.nativeElement.querySelector('mat-card');
     this.progress = 0;
     if (a) {
       a.classList.add(className);
@@ -16,7 +16,7 @@ export class HightlightService {
       this.ngZone.runOutsideAngular(() => {        
         setTimeout(() => {
           a.classList.remove(className);
-        }, 500);
+        }, 1000);
       });      
     }
   }

@@ -1,21 +1,24 @@
-<div style="border: 1px solid blue; display:grid; grid-template-rows: 50px calc(100% - 100px); height: 100%; padding: 10px">  
+<mat-card class="mat-elevation-z4" style="display:grid; grid-template-rows: 50px calc(100% - 100px); padding: 30px">  
   <div>
-    <div style="padding-bottom: 10px;">
+    <div style="padding-bottom: 30px;">
       <div>
         <b>Gamma</b> {{ renderView() }}
       </div>
       <div>
-        <button (click)="onClick()">Button</button>
+        <button mat-raised-button color="primary" (click)="onClick()">Button</button>
       </div>
     </div>
   </div>
   <div >
-    <div *ngIf="true" style="padding-bottom: 10px">
-      <button (click)="onGenerateOneId()">Generate random One ID</button>
-      <button (click)="onChangeUserOne()">Change user first name</button>
-      <button (click)="onChangeObservable()">Change observable</button>
+    <div *ngIf="true" style="padding-bottom: 30px; padding-top: 30px;">
+      <span style="padding:10px">
+        <button mat-raised-button color="primary" (click)="onGenerateOneId()">Generate random One ID</button></span>
+      <span style="padding:10px">
+        <button mat-raised-button color="primary" (click)="onChangeUserOne()">Change user first name</button></span>
+      <span style="padding:10px">
+        <button mat-raised-button color="primary" (click)="onChangeObservable()">Change observable</button></span>      
     </div>
   
     <app-primary [id]="idPrimary" [user]="userOne" [observable]="observable$"></app-primary>
   </div>
-</div>
+</mat-card>

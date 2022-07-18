@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { TwoModule } from './two/two.module';
 import { OneModule } from './one/one.module';
 import { ThreeModule } from './three/three.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -14,7 +17,10 @@ import { ThreeModule } from './three/three.module';
     BrowserModule,
     OneModule,
     TwoModule,
-    ThreeModule
+    ThreeModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
