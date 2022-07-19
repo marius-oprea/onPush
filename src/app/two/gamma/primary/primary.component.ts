@@ -19,7 +19,7 @@ import { HightlightService } from 'src/app/shared/highlight.service';
   selector: 'app-primary',
   templateUrl: './primary.component.html',
   styleUrls: ['./primary.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   @Input() id: number

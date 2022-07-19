@@ -5,7 +5,7 @@ import { HightlightService } from '../shared/highlight.service';
   selector: 'app-two',
   templateUrl: './two.component.html',
   styleUrls: ['./two.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TwoComponent {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {

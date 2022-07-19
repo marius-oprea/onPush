@@ -19,7 +19,7 @@ import { HightlightService } from './shared/highlight.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
@@ -33,7 +33,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   }
 
   renderView() {
-    console.log('App', this.element);
+    console.log('App');
     this.highlightService.run(this.element);
   }  
 
