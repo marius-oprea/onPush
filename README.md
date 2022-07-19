@@ -26,3 +26,5 @@ https://www.thinktecture.com/en/angular/whats-the-hype-onpush/
 https://www.toptal.com/angular/angular-change-detection
 
 https://www.thisdot.co/blog/avoid-common-pitfalls-when-using-onpush-change-detection-in-angular
+
+https://github.com/angular/angular/blob/main/packages/common/src/pipes/async_pipe.ts
