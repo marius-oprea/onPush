@@ -9,7 +9,7 @@ https://github.com/marius-oprea/onPush
 
 
 onPush strategy:
-
+---------------
   https://angular.io/api/core/ChangeDetectionStrategy
 
   https://angular.io/api/core/ApplicationRef#tick
@@ -36,13 +36,13 @@ onPush strategy:
   https://www.thisdot.co/blog/avoid-common-pitfalls-when-using-onpush-change-detection-in-angular
 
 execution content:
-
+-----------------
   https://www.w3schools.com/js/js_this.asp
 
   https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c
 
 zones:
-
+------
   https://angular.io/guide/zone
 
   https://github.com/angular/zone.js/ 
@@ -54,16 +54,16 @@ zones:
   https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts
 
 memoization:
-
+-----------
   https://en.wikipedia.org/wiki/Memoization
 
   https://medium.com/angular-in-depth/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f
 
 async pipe:
-
+-----------
   https://github.com/angular/angular/blob/main/packages/common/src/pipes/async_pipe.ts
 
 profiling:
-
+----------
   https://github.com/angular/angular/blob/8fd25d96142ba5bd6674ba19848b5477e9bbe861/packages/platform-browser/src/browser/tools/common_tools.ts#L28
 
