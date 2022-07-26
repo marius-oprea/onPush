@@ -1,6 +1,10 @@
+presentation in PowerPoint:
+===========================
+https://1drv.ms/p/s!AmXWpRLCJqBmhP8lEQKnFt2RGTJnrA?e=3u4tp8
+
+
 References:
 ===========
-
 https://github.com/marius-oprea/onPush
 
 
@@ -26,6 +30,7 @@ execution content:
 zones:
   https://angular.io/guide/zone
   https://github.com/angular/zone.js/ 
+  https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks
   https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
   https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts
 
