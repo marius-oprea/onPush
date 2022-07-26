@@ -29,6 +29,10 @@ zones:
   https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
   https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts
 
+memoization:
+  https://en.wikipedia.org/wiki/Memoization
+  https://medium.com/angular-in-depth/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f
+
 async pipe:
   https://github.com/angular/angular/blob/main/packages/common/src/pipes/async_pipe.ts
 
