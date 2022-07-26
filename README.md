@@ -1,14 +1,15 @@
-presentation in PowerPoint:
+#Presentation in PowerPoint:
 ===========================
 https://1drv.ms/p/s!AmXWpRLCJqBmhP8lEQKnFt2RGTJnrA?e=3u4tp8
 
 
-References:
+#References:
 ===========
 https://github.com/marius-oprea/onPush
 
 
-onPush strategy:
+#onPush strategy:
+
   https://angular.io/api/core/ChangeDetectionStrategy
   https://angular.io/api/core/ApplicationRef#tick
   https://github.com/angular/angular/blob/main/packages/core/src/application_ref.ts#L991
@@ -23,24 +24,29 @@ onPush strategy:
   https://www.toptal.com/angular/angular-change-detection
   https://www.thisdot.co/blog/avoid-common-pitfalls-when-using-onpush-change-detection-in-angular
 
-execution content:
+#execution content:
+
   https://www.w3schools.com/js/js_this.asp
   https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c
 
-zones:
+#zones:
+
   https://angular.io/guide/zone
   https://github.com/angular/zone.js/ 
   https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks
   https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
   https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts
 
-memoization:
+#memoization:
+
   https://en.wikipedia.org/wiki/Memoization
   https://medium.com/angular-in-depth/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f
 
-async pipe:
+#async pipe:
+
   https://github.com/angular/angular/blob/main/packages/common/src/pipes/async_pipe.ts
 
-profiling:
+#profiling:
+
   https://github.com/angular/angular/blob/8fd25d96142ba5bd6674ba19848b5477e9bbe861/packages/platform-browser/src/browser/tools/common_tools.ts#L28
 
