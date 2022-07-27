@@ -57,7 +57,9 @@ memoization:
 -----------
   https://en.wikipedia.org/wiki/Memoization
 
-  https://medium.com/angular-in-depth/everything-you-need-to-know-about-change-detection-in-angular-8006c51d206f
+  https://medium.com/angular-in-depth/how-to-improve-angular-performance-by-just-adding-just-8-characters-877bde708ddd
+
+  https://www.freecodecamp.org/news/understanding-memoize-in-javascript-51d07d19430e/
 
 async pipe:
 -----------
