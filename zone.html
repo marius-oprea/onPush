@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<script src="zone.js"></script>
+	</head>
+	<body>
+	<script>		
+	
+		// https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
+		// https://github.com/angular/angular/tree/main/packages/zone.js/example
+		/*
+		 * Zone is a mechanism for intercepting and keeping track of asynchronous work.
+		 *
+		 * A Zone is a global object which is configured with rules about how to intercept and keep track
+		 * of the asynchronous callbacks. Zone has these responsibilities:
+		 *
+		 * 1. Intercept asynchronous task scheduling
+		 * 2. Wrap callbacks for error-handling and zone tracking across async operations.
+		 * 3. Provide a way to attach data to zones
+		 * 4. Provide a context specific last frame error handling
+		 * 5. (Intercept blocking methods)		
+		*/
+		
+		var zoneA = Zone.current.fork({name:'ZoneA'});
+		zoneA.run(main);
+						
+		function main() {
+			const obj = { a: 'Custom' };
+			
+			function whatsThis() {
+				// Zone.current is equivalent to this
+				console.log(Zone.current === zoneA, Zone.current.name, zoneA.name);
+			}		
+			
+			whatsThis();
+			whatsThis.call(obj);			
+		}
+		
+		/*
+		function main() {			
+			const obj = { a: 'Custom' };
+			
+			function whatsThis() {
+				console.log(this);				
+			}		
+			
+			whatsThis();
+			whatsThis.call(obj);			
+		}
+		*/		
+		//main();
+		
+	</script>	
+	</body>
+</html>
