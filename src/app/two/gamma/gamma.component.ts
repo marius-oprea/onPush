@@ -1,12 +1,23 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, Input } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { HightlightService } from 'src/app/shared/highlight.service';
+import { PrimaryComponent } from './primary/primary.component';
 
 @Component({
+  standalone: true,
   selector: 'app-gamma',
+  imports: [
+    CommonModule,
+    PrimaryComponent,
+    MatButtonModule,
+    MatCardModule
+  ],
   templateUrl: './gamma.component.html',
   styleUrls: ['./gamma.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GammaComponent {
   @Input() id: number;
@@ -34,15 +45,7 @@ export class GammaComponent {
     this.counter = 0;
   }
 
-  onGenerateId(): number {
-    return Math.floor(Math.random() * 100);
-  }
-
-  onGenerateOneId() {
-    this.idPrimary = this.onGenerateId();
-  }
-
-  onChangeUserOne() {
+  onChangeUser() {
     this.userOne.firstName = 'Adam';
     /*
     this.userOne = {
@@ -55,7 +58,7 @@ export class GammaComponent {
   onClick() {
   }
 
-  onGeneratePrimaryId() {
+  onGenerateId() {
     this.idPrimary = Math.floor(Math.random() * 100);
   }
 

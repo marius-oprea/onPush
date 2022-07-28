@@ -27,6 +27,8 @@ onPush strategy:
   https://angular.io/api/core/ApplicationRef#tick  
   https://github.com/angular/angular/blob/main/packages/core/src/application_ref.ts#L991  
 
+  https://www.youtube.com/watch?v=aDnKmuQWTyE&ab_channel=FrontPro  
+  https://www.youtube.com/watch?v=-tB-QDrPmuI&ab_channel=MonsterlessonsAcademy  
   https://www.youtube.com/watch?v=moUCZoJfhwY&ab_channel=NG-DEConference  
   https://blogs.halodoc.io/understanding-angular-change-detection-strategy/  
   https://www.youtube.com/watch?v=OcphK_aEd7I&ab_channel=StepanSuvorov  
@@ -63,5 +65,6 @@ async pipe:
 
 profiling:
 ----------
-  https://github.com/angular/angular/blob/8fd25d96142ba5bd6674ba19848b5477e9bbe861/packages/platform-browser/src/browser/tools/common_tools.ts#L28
+  https://github.com/angular/angular/blob/8fd25d96142ba5bd6674ba19848b5477e9bbe861/packages/platform-browser/src/browser/tools/common_tools.ts#L28  
+
 

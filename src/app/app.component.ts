@@ -13,13 +13,36 @@ import {
   OnInit,
   SimpleChanges 
 } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { BrowserModule } from '@angular/platform-browser';
+import { OneComponent } from './one/one.component';
 import { HightlightService } from './shared/highlight.service';
+import { ThreeComponent } from './three/three.component';
+import { TwoComponent } from './two/two.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
+  imports: [
+    // BrowserModule,
+    RouterModule,
+    CommonModule,
+    OneComponent,
+    TwoComponent,
+    ThreeComponent,
+    
+    MatButtonModule,
+    // BrowserAnimationsModule,
+    MatCardModule
+    
+  ],  
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
@@ -28,7 +51,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   onClick() {    
   }
 
-  onDetectChanges() {
+  onTick() {
     this.appRef.tick();
   }
 
