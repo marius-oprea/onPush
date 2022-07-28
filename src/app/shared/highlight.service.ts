@@ -13,7 +13,7 @@ export class HightlightService {
     if (card) {
       card.classList.add(className);
 
-      this.ngZone.runOutsideAngular(() => {        
+      this.ngZone.runOutsideAngular(() => {
         setTimeout(() => {
           card.classList.remove(className);
         }, 1000);

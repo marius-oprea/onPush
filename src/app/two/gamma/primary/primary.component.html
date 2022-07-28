@@ -1,13 +1,13 @@
 <mat-card class="mat-elevation-z4">
   <div>
     <div>
-      <b>Primary</b> {{ renderView() }}
+      <b>{{getTitle('Primary')}}</b> {{ renderView() }}
     </div>
     <div>
       <button mat-raised-button color="primary" (click)="onClick()">Button</button>
     </div>
 
-    <ng-container *ngIf="false">
+    <ng-container *ngIf="true">
       <div class="buttons">
         <span>
           <button mat-raised-button color="primary" (click)="detectChanges()">detectChanges</button>

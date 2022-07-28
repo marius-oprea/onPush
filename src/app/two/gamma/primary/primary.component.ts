@@ -14,6 +14,7 @@ import {
   SimpleChanges 
 } from '@angular/core';
 import { HightlightService } from 'src/app/shared/highlight.service';
+import { memoize } from './memoize.decorator';
 
 @Component({
   selector: 'app-primary',
@@ -31,6 +32,12 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
   }
  
   onClick() {
+  }
+
+  //@memoize()
+  getTitle(title: string) {
+    console.log('getTitle is called');
+    return title;
   }
 
   renderView() {
@@ -58,7 +65,6 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
   reattach() {
     this.cdr.reattach();
   }
-
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('App -> Two -> Gamma -> Primary - ngOnChanges');
