@@ -18,7 +18,7 @@ import { EpsilonComponent } from './epsilon/epsilon.component';
   ],
   templateUrl: './three.component.html',
   styleUrls: ['./three.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ThreeComponent {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {

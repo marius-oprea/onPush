@@ -25,7 +25,7 @@ import { memoize } from '../../../shared/memoize.decorator';
   imports: [CommonModule, MatButtonModule, MatCardModule],
   templateUrl: './primary.component.html',
   styleUrls: ['./primary.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
   @Input() id: number

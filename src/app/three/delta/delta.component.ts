@@ -10,7 +10,7 @@ import { HightlightService } from 'src/app/shared/highlight.service';
   imports: [CommonModule, MatButtonModule, MatCardModule],
   templateUrl: './delta.component.html',
   styleUrls: ['./delta.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DeltaComponent {  
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {

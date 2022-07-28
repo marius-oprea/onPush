@@ -16,7 +16,7 @@ import { GammaComponent } from './gamma/gamma.component';
   ],  
   templateUrl: './two.component.html',
   styleUrls: ['./two.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TwoComponent {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {

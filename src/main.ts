@@ -4,9 +4,9 @@ import { AppComponent } from './app/app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from './environments/environment';
 
-//if (environment.production) {
+if (environment.production) {
   enableProdMode();
-//}
+}
 
 const routes: Routes = [
   {

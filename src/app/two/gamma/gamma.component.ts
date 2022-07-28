@@ -17,7 +17,7 @@ import { PrimaryComponent } from './primary/primary.component';
   ],
   templateUrl: './gamma.component.html',
   styleUrls: ['./gamma.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class GammaComponent {
   @Input() id: number;

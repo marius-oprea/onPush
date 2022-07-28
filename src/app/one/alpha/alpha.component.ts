@@ -10,7 +10,7 @@ import { HightlightService } from 'src/app/shared/highlight.service';
   imports: [CommonModule, MatButtonModule, MatCardModule],
   templateUrl: './alpha.component.html',
   styleUrls: ['./alpha.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AlphaComponent {
   constructor(private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
