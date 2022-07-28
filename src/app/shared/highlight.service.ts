@@ -7,15 +7,15 @@ export class HightlightService {
   constructor(private ngZone: NgZone) {
   }
 
-  run(el: any, className = 'checked') {
-    const a = el.nativeElement.querySelector('mat-card');
+  run(element: any, className = 'checked') {
+    const card = element.nativeElement.querySelector('mat-card');
     this.progress = 0;
-    if (a) {
-      a.classList.add(className);
+    if (card) {
+      card.classList.add(className);
 
       this.ngZone.runOutsideAngular(() => {        
         setTimeout(() => {
-          a.classList.remove(className);
+          card.classList.remove(className);
         }, 1000);
       });      
     }

@@ -1,3 +1,16 @@
-.checked {
-  background-color: lightgrey;// green;
+.card {
+  display:grid;
+  grid-template-rows: 40px calc(100% - 20px);
+  row-gap: 30px;
+  padding: 30px;
+
+  .main-component {
+    padding-bottom: 30px;
+  }
+
+  .child-components {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 30px;
+  }
 }

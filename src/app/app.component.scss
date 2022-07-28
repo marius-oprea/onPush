@@ -1,3 +1,19 @@
-.checked {
-  background:  lightgrey;// red !important;
+.card {
+  padding: 30px;
+  width: calc(100% - 60px);
+  min-width: fit-content;
+
+  .main-component {
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-rows:  auto auto auto;
+    row-gap: 10px; 
+  }
+
+  .child-components {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    column-gap: 30px;
+  }
 }

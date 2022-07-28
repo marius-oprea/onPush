@@ -3,12 +3,12 @@ Presentation in PowerPoint:
 https://1drv.ms/p/s!AmXWpRLCJqBmhP8lEQKnFt2RGTJnrA?e=3u4tp8
 
 
-References:
-===========
+Presentation project:
+=====================
 https://github.com/marius-oprea/onPush
 
 Requirements:
-=============
+------------
 **nodejs** https://nodejs.org/en/  
 **angular CLI** npm install -g @angular/cli
 
@@ -17,6 +17,9 @@ Installation:
 `npm i`
 
 `ng s`
+
+Project References:
+===================
 
 onPush strategy:
 ---------------

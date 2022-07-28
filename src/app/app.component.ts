@@ -28,7 +28,7 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   onClick() {    
   }
 
-  detectChanges() {
+  onDetectChanges() {
     this.appRef.tick();
   }
 
