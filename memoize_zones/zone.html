@@ -1,6 +1,9 @@
 <html>
 	<head>
-		<script src="zone.js"></script>
+		<script src="https://unpkg.com/zone.js@0.11.7/bundles/zone.umd.js"></script>
+		<!--
+			<script src="zone.js"></script>
+		-->
 	</head>
 	<body>
 		<script>		
@@ -10,6 +13,8 @@
 			
 			// https://medium.com/ngconf/deep-dive-into-zone-js-part-1-execution-context-92166bbb957
 			// https://medium.com/ngconf/deep-dive-into-zone-js-part-2-lifecycle-hooks-169da568227e
+			
+			// https://medium.com/reverse-engineering-angular/angular-deep-dive-zone-js-how-does-it-monkey-patches-various-apis-9cc1c7fcc321
 			
 			/*
 			 * Zone is a mechanism for intercepting and keeping track of asynchronous work.
@@ -23,7 +28,7 @@
 			 * 4. Provide a context specific last frame error handling
 			 * 5. (Intercept blocking methods)		
 			*/
-			
+/*
 			var zoneA = Zone.current.fork({
 				name:'ZoneA',
 				onScheduleTask(parent, current, target, task) {
@@ -64,12 +69,13 @@
 				
 				const timer = setTimeout(() => {
 					console.log('setTimeout');
-					// throw new Error('aw shucks');
+					//throw new Error('intercepted error');
 				});
 				// clearTimeout(timer);
+				
 			}
+*/
 			
-			/*
 			function main() {			
 				const obj = { a: 'Custom' };
 				
@@ -80,8 +86,32 @@
 				whatsThis();
 				whatsThis.call(obj);			
 			}
-			*/		
-			//main();
+					
+			main();
+			
+	
+			/*
+				Monkey patching/overriding setTimeout
+			*/
+/*
+			var orig_setTimeout = window.setTimeout;
+
+			window.setTimeout = function setTimeout(fn, ms) {
+				// your patching code goes here
+				console.log('setTimeout started');
+				
+				original_fn = fn;
+				fn = () => {
+					original_fn();
+					console.log('setTimeout ended');				
+				}
+				return orig_setTimeout(fn, ms);
+			}
+		
+			setTimeout(() => {
+				console.log('setTimeout');
+			}, 3000);
+*/
 			
 		</script>	
 	</body>

@@ -40,14 +40,24 @@ import { RouterModule } from '@angular/router';
   // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked {
-  constructor(private appRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
+  constructor(private applicationRef: ApplicationRef, private cdr: ChangeDetectorRef, private element: ElementRef, private highlightService: HightlightService) {
+    const originalTick = applicationRef.tick;
+    applicationRef.tick = function() {
+      const windowPerfomance = window.performance;
+      const  before = windowPerfomance.now();
+      const retValue = originalTick.apply(this);
+      const after = windowPerfomance.now();
+      const runTime = after - before;
+      window.console.log('CHANGE DETECTION TIME' , runTime);
+      return retValue;
+    };  
   }
 
   onClick() {    
   }
 
   onTick() {
-    this.appRef.tick();
+    this.applicationRef.tick();
   }
 
   renderView() {
