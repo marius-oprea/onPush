@@ -13,10 +13,8 @@ import {
   OnInit,
   SimpleChanges 
 } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
-import { BrowserModule } from '@angular/platform-browser';
 import { OneComponent } from './one/one.component';
 import { HightlightService } from './shared/highlight.service';
 import { ThreeComponent } from './three/three.component';
@@ -28,15 +26,12 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   selector: 'app-root',
   imports: [
-    // BrowserModule,
     RouterModule,
     CommonModule,
     OneComponent,
     TwoComponent,
     ThreeComponent,
-    
     MatButtonModule,
-    // BrowserAnimationsModule,
     MatCardModule
     
   ],  
@@ -61,30 +56,30 @@ export class AppComponent implements OnChanges, OnInit, DoCheck, AfterContentIni
   }  
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('App - ngOnChanges');
+    //console.log('App - ngOnChanges');
   }
 
   ngOnInit(): void {
-    console.log('App - ngOnInit');
+    //console.log('App - ngOnInit');
   }
 
   ngDoCheck(): void {
-    console.log('App - ngDoCheck');
+    //console.log('App - ngDoCheck');
   }
 
   ngAfterContentInit() {
-    console.log('App - ngAfterContentInit');
+    //console.log('App - ngAfterContentInit');
   }
 
   ngAfterContentChecked(): void {
-    console.log('App - ngAfterContentChecked');
+    //console.log('App - ngAfterContentChecked');
   }
 
   ngAfterViewInit(): void {
-    console.log('App - ngAfterViewInit');
+    //console.log('App - ngAfterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.log('App - ngAfterViewChecked');
+    //console.log('App - ngAfterViewChecked');
   } 
 }

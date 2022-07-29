@@ -72,32 +72,32 @@ export class PrimaryComponent implements OnChanges, OnInit, DoCheck, AfterConten
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('App -> Two -> Gamma -> Primary - ngOnChanges');
+    //console.log('App -> Two -> Gamma -> Primary - ngOnChanges');
   }
 
   ngOnInit(): void {
-    console.log('App -> Two -> Gamma -> Primary - ngOnInit');
+    //console.log('App -> Two -> Gamma -> Primary - ngOnInit');
   }
 
   ngDoCheck(): void {
-    console.log('App -> Two -> Gamma -> Primary - ngDoCheck');
-    // this.cdr.markForCheck();
-    // this.cdr.detectChamges();
+    //console.log('App -> Two -> Gamma -> Primary - ngDoCheck');
+    //this.cdr.markForCheck();
+    //this.cdr.detectChamges();
   }
 
   ngAfterContentInit() {
-    console.log('App -> Two -> Gamma -> Primary - ngAfterContentInit');
+    //console.log('App -> Two -> Gamma -> Primary - ngAfterContentInit');
   }
 
   ngAfterContentChecked(): void {
-    console.log('App -> Two -> Gamma -> Primary - ngAfterContentChecked');
+    //console.log('App -> Two -> Gamma -> Primary - ngAfterContentChecked');
   }
 
   ngAfterViewInit(): void {
-    console.log('App -> Two -> Gamma -> Primary - ngAfterViewInit');
+    //console.log('App -> Two -> Gamma -> Primary - ngAfterViewInit');
   }
 
   ngAfterViewChecked() {
-    console.log('App -> Two -> Gamma -> Primary - ngAfterViewChecked');
+    //console.log('App -> Two -> Gamma -> Primary - ngAfterViewChecked');
   }  
 }
