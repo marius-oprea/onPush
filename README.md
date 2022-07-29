@@ -52,7 +52,9 @@ zones:
   https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide#tasks  
   https://medium.com/swlh/what-is-zone-js-and-how-can-i-use-it-63ce08a55962  
   https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts  
-  https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts
+  https://github.com/angular/angular/blob/main/packages/core/src/zone/ng_zone.ts  
+  https://medium.com/ngconf/deep-dive-into-zone-js-part-1-execution-context-92166bbb957  
+  https://medium.com/ngconf/deep-dive-into-zone-js-part-2-lifecycle-hooks-169da568227e
 
 memoization:
 -----------

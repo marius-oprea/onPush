@@ -3,52 +3,86 @@
 		<script src="zone.js"></script>
 	</head>
 	<body>
-	<script>		
-	
-		// https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
-		// https://github.com/angular/angular/tree/main/packages/zone.js/example
-		/*
-		 * Zone is a mechanism for intercepting and keeping track of asynchronous work.
-		 *
-		 * A Zone is a global object which is configured with rules about how to intercept and keep track
-		 * of the asynchronous callbacks. Zone has these responsibilities:
-		 *
-		 * 1. Intercept asynchronous task scheduling
-		 * 2. Wrap callbacks for error-handling and zone tracking across async operations.
-		 * 3. Provide a way to attach data to zones
-		 * 4. Provide a context specific last frame error handling
-		 * 5. (Intercept blocking methods)		
-		*/
+		<script>		
 		
-		var zoneA = Zone.current.fork({name:'ZoneA'});
-		zoneA.run(main);
-						
-		function main() {
-			const obj = { a: 'Custom' };
+			// https://github.com/angular/angular/blob/main/packages/zone.js/lib/zone.ts
+			// https://github.com/angular/angular/tree/main/packages/zone.js/example
 			
-			function whatsThis() {
-				// Zone.current is equivalent to this
-				console.log(Zone.current === zoneA, Zone.current.name, zoneA.name);
-			}		
+			// https://medium.com/ngconf/deep-dive-into-zone-js-part-1-execution-context-92166bbb957
+			// https://medium.com/ngconf/deep-dive-into-zone-js-part-2-lifecycle-hooks-169da568227e
 			
-			whatsThis();
-			whatsThis.call(obj);			
-		}
-		
-		/*
-		function main() {			
-			const obj = { a: 'Custom' };
+			/*
+			 * Zone is a mechanism for intercepting and keeping track of asynchronous work.
+			 *
+			 * A Zone is a global object which is configured with rules about how to intercept and keep track
+			 * of the asynchronous callbacks. Zone has these responsibilities:
+			 *
+			 * 1. Intercept asynchronous task scheduling
+			 * 2. Wrap callbacks for error-handling and zone tracking across async operations.
+			 * 3. Provide a way to attach data to zones
+			 * 4. Provide a context specific last frame error handling
+			 * 5. (Intercept blocking methods)		
+			*/
 			
-			function whatsThis() {
-				console.log(this);				
-			}		
+			var zoneA = Zone.current.fork({
+				name:'ZoneA',
+				onScheduleTask(parent, current, target, task) {
+					parent.scheduleTask(target, task);
+					console.log('Scheduled ' + task.source + ' => ' + task.data.handleId);
+				},
+				onInvokeTask(parent, current, target, task) {
+					console.log('Invoking ' + task.source + ' => ' + task.data.handleId);
+					parent.invokeTask(target, task);
+				},
+				onHasTask(parent, current, target, hasTask) {
+					if (hasTask.macroTask) {
+						console.log("There are outstanding MacroTasks.");
+					} else {
+						console.log("All MacroTasks have been completed.");
+					}
+				},
+				onCancelTask(parent, current, target, task) {
+					console.log('Canceling ' + task.source + ' => ' + task.data.handleId);
+					parent.cancelTask(target, task);
+				},
+				onHandleError(parent, current, target, error) {
+					console.log(error.stack);
+				}			
+			});
+			zoneA.run(main);
+							
+			function main() {
+				const obj = { a: 'Custom' };
+				
+				function whatsThis() {
+					// Zone.current is equivalent to this
+					console.log(Zone.current === zoneA, Zone.current.name, zoneA.name);
+				}		
+				
+				whatsThis();
+				whatsThis.call(obj);
+				
+				const timer = setTimeout(() => {
+					console.log('setTimeout');
+					// throw new Error('aw shucks');
+				});
+				// clearTimeout(timer);
+			}
 			
-			whatsThis();
-			whatsThis.call(obj);			
-		}
-		*/		
-		//main();
-		
-	</script>	
+			/*
+			function main() {			
+				const obj = { a: 'Custom' };
+				
+				function whatsThis() {
+					console.log(this);				
+				}		
+				
+				whatsThis();
+				whatsThis.call(obj);			
+			}
+			*/		
+			//main();
+			
+		</script>	
 	</body>
 </html>
